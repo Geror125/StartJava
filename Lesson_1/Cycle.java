@@ -1,0 +1,25 @@
+public class Cycle {
+    public static void main(String[] args) {
+        for (byte i = 0; i <=20 ; i++) {
+        System.out.print(i + " ");
+        }
+        System.out.println(";");
+
+        int x = 8;
+        while (x >= -4) {
+            x = x - 2;
+            System.out.print(x + " ");
+        } x++;
+        System.out.println(";");
+
+        byte n = 0;
+        int m = 10;
+        do {
+            m = m + 1;
+            if (m % 2 == 0) {
+                n++;
+            }
+        } while(m <= 20);
+        System.out.println(n);
+    }
+}
