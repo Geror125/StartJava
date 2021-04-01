@@ -6,26 +6,21 @@ public class Calculator {
         char operation = '^';
         if (operation == '+') {
             result = oneNumber + twoNumber;
-            System.out.println(result);
         } else if (operation == '-') {
             result = oneNumber - twoNumber;
-            System.out.println(result);
         } else if (operation == '*') {
             result = oneNumber * twoNumber;
-            System.out.println(result);
         } else if (operation == '/') {
             result = oneNumber / twoNumber;
-            System.out.println(result);
         } else if (operation == '^') {
             int sum = 1;
             for (int i = 1; i <= twoNumber; i++) {
                 sum = oneNumber * oneNumber;
                 result = result + sum;
             }
-            System.out.println(result);
         } else if (operation == '%') {
             result = oneNumber % twoNumber;
-            System.out.println(result);
         }
+        System.out.println(result);
     }
 }
