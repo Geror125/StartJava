@@ -1,25 +1,23 @@
 public class Calculator {
     public static void main(String[] args) {
-        int oneNumber = 2;
-        int twoNumber = 4;
-        int result = 0;
+        int firstNumber = 2;
+        int secondNumber = 4;
+        int result = 1;
         char operation = '^';
         if (operation == '+') {
-            result = oneNumber + twoNumber;
+            result = firstNumber + secondNumber;
         } else if (operation == '-') {
-            result = oneNumber - twoNumber;
+            result = firstNumber - secondNumber;
         } else if (operation == '*') {
-            result = oneNumber * twoNumber;
+            result = firstNumber * secondNumber;
         } else if (operation == '/') {
-            result = oneNumber / twoNumber;
+            result = firstNumber / secondNumber;
         } else if (operation == '^') {
-            int sum = 1;
-            for (int i = 1; i <= twoNumber; i++) {
-                sum = oneNumber * oneNumber;
-                result = result + sum;
+            for (int i = 1; i <= secondNumber; i++) {
+                result *= firstNumber;
             }
         } else if (operation == '%') {
-            result = oneNumber % twoNumber;
+            result = firstNumber % secondNumber;
         }
         System.out.println(result);
     }
