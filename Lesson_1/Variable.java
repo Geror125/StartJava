@@ -1,13 +1,13 @@
 public class Variable {   
     public static void main(String[] args) {
-        byte by = 32;
-        short sh = 5418;
-        int in = 44484516;
+        byte ram = 16;
+        short videoCard = 1660;
+        int processor = 3470;
         long lon = 1122334455;
-        float fl = 3.484f;
+        float buildOS = 19041.388f;
         double db = 3.46846848484d;
         char sym = 't';
-        boolean bl = true;
+        boolean gaming = true;
         System.out.println(by);
         System.out.println(sh);
         System.out.println(in);
