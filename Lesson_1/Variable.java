@@ -8,13 +8,13 @@ public class Variable {
         double db = 3.46846848484d;
         char sym = 't';
         boolean gaming = true;
-        System.out.println(by);
-        System.out.println(sh);
-        System.out.println(in);
+        System.out.println(ram);
+        System.out.println(videoCard);
+        System.out.println(processor);
         System.out.println(lon);
-        System.out.println(fl);
+        System.out.println(buildOS);
         System.out.println(db);
         System.out.println(sym);
-        System.out.println(bl);
+        System.out.println(gaming);
     }
 }

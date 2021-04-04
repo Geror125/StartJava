@@ -1,4 +1,4 @@
-public class MyFirstGame{
+public class MyFirstGame {
     public static void main(String[] args) {
         byte unknownNumber = 30;
         byte userNumber = 30;
