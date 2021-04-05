@@ -16,8 +16,7 @@ public class Cycle {
         int m = 10;
         do {
             if (m % 2 != 0) {
-                n++;
-                System.out.println(m + ";");
+                n += m;
             }
             m += 1;
         } while(m <= 20);
