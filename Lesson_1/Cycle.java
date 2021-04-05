@@ -15,12 +15,12 @@ public class Cycle {
         byte n = 0;
         int m = 10;
         do {
-            m += 1;
             if (m % 2 != 0) {
                 n++;
                 System.out.println(m + ";");
             }
-        } while(m < 20);
+            m += 1;
+        } while(m <= 20);
         System.out.println(n + ";");
     }
 }
