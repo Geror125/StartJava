@@ -1,23 +1,62 @@
 public class Wolf {
-    String gender = "male";
-    String petName = "foam";
-    byte weight = 30;
-    byte age = 6;
-    String paintColor = "milky";
+    private String gender = "male";
+    private String petName = "foam";
+    private int weight = 30;
+    private int age = 6;
+    private String paintColor = "milky";
 
-    void walk() {
+    public String getGender() {
+        return gender;
+    }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getPetName() {
+        return petName;
+    }
+    public void setPetName(String petName) {
+            this.petName = petName;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+    public void setWeight(int weight) {
+            this.weight = weight;
+    }
+
+    public int getAge() {
+        return age;
+    }
+    void setAge(int age) {
+        if (age > 8) {
+            System.out.println("Incorrect age");
+        } else {
+            this.age = age;
+        }
+    }
+
+    public String getPaintColor() {
+        return paintColor;
+    }
+    public void setPaintColor(String paintColor) {
+            this.paintColor = paintColor;
+    }
+
+    public void walk() {
         System.out.println("walks");
     }
-    void sit() {
+    public void sit() {
         System.out.println("sits");
     }
-    void run() {
+    public void run() {
         System.out.println("runs");
     }
-    void howl() {
+    public void howl() {
         System.out.println("howls");
     }
-    void hunt() {
+    public void hunt() {
         System.out.println("hunts");
     }
 }
