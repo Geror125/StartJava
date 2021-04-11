@@ -1,6 +1,6 @@
 public class WolfTest {
     public static void main(String[] args) {
-        Wolf wolfOne = new Wolf("male", "foam", 30, 6, "milky");
+        Wolf wolfOne = new Wolf();
         System.out.println(wolfOne.gender);
         System.out.println(wolfOne.petName);
         System.out.println(wolfOne.weight);

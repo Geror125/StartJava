@@ -1,31 +1,23 @@
 public class Wolf {
-    String gender;
-    String petName;
-    byte weight;
-    byte age;
-    String paintColor;
+    String gender = "male";
+    String petName = "foam";
+    byte weight = 30;
+    byte age = 6;
+    String paintColor = "milky";
 
-    String walk() {
-        return "walks";
+    void walk() {
+        System.out.println("walks");
     }
-    String sit() {
-        return "sits";
+    void sit() {
+        System.out.println("sits");
     }
-    String run() {
-        return "runs";
+    void run() {
+        System.out.println("runs");
     }
-    String howl() {
-        return "howls";
+    void howl() {
+        System.out.println("howls");
     }
-    String hunt() {
-        return "hunts";
-    }
-    
-    public Wolf(String gender, String petName, byte weight, byte age, String paintColor) {
-        this.gender = gender;
-        this.petName = petName;
-        this.weight = weight;
-        this.age = age;
-        this.paintColor = paintColor;
+    void hunt() {
+        System.out.println("hunts");
     }
 }
