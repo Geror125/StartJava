@@ -8,6 +8,7 @@ public class Wolf {
     public String getGender() {
         return gender;
     }
+
     public void setGender(String gender) {
         this.gender = gender;
     }
@@ -15,6 +16,7 @@ public class Wolf {
     public String getPetName() {
         return petName;
     }
+
     public void setPetName(String petName) {
             this.petName = petName;
     }
@@ -22,6 +24,7 @@ public class Wolf {
     public int getWeight() {
         return weight;
     }
+
     public void setWeight(int weight) {
             this.weight = weight;
     }
@@ -29,6 +32,7 @@ public class Wolf {
     public int getAge() {
         return age;
     }
+
     void setAge(int age) {
         if (age > 8) {
             System.out.println("Incorrect age");
@@ -40,6 +44,7 @@ public class Wolf {
     public String getPaintColor() {
         return paintColor;
     }
+
     public void setPaintColor(String paintColor) {
             this.paintColor = paintColor;
     }
@@ -47,15 +52,19 @@ public class Wolf {
     public void walk() {
         System.out.println("walks");
     }
+
     public void sit() {
         System.out.println("sits");
     }
+
     public void run() {
         System.out.println("runs");
     }
+
     public void howl() {
         System.out.println("howls");
     }
+    
     public void hunt() {
         System.out.println("hunts");
     }
