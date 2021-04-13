@@ -3,12 +3,13 @@ import java.util.Scanner;
 public class CalculatorTest {
 
     public static void main(String[] args) {
-        Scanner scanner = null; 
+        Scanner scanner = null;
         String reply = "yes";
 
-        while(reply.equals("yes")) {
+        while (reply.equals("yes")) {
             Calculator calculator = new Calculator();
             Scanner scan = new Scanner(System.in);
+
             System.out.print("Enter the first number: ");
             calculator.setFirstNumber(scan.nextInt());
 
@@ -21,7 +22,7 @@ public class CalculatorTest {
             System.out.println("Result: " + calculator.calculate());
 
             boolean isAnswerCorrect = false;
-            while(!isAnswerCorrect){
+            while (!isAnswerCorrect) {
                System.out.print("Do you want to continue computing? [yes/no]: ");
                reply = scan.nextLine();
                isAnswerCorrect = (reply.equals("yes")||reply.equals("no"));
