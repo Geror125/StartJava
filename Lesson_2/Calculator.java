@@ -1,9 +1,5 @@
 public class Calculator {
     private int result;
-    private int firstNumber;
-    private int secondNumber;
-    private char sign;
-
     public int calculate() {
         switch (sign) {
             case '+' :
@@ -26,14 +22,17 @@ public class Calculator {
         return result;
     }
 
+    private int firstNumber;
     public void setFirstNumber(int firstNumber) {
         this.firstNumber = firstNumber;
     }
 
+    private int secondNumber;
     public void setSecondNumber(int secondNumber) {
         this.secondNumber = secondNumber;
     }
-
+    
+    private char sign;
     public void setSign(char sign) {
         this.sign = sign;
     }
