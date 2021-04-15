@@ -1,5 +1,5 @@
 public class Calculator {
-    private int calculate;
+    private int result;
     private int firstNumber;
     private int secondNumber;
     private char sign;
@@ -15,15 +15,15 @@ public class Calculator {
             case '/' :
                 return firstNumber / secondNumber;
             case '^' :
-                calculate = 1;
+                result = 1;
                 for (int i = 1; i <= secondNumber; i++) {
-                    calculate *= firstNumber;
+                    result *= firstNumber;
                 }
                 break;
             case '%' :
                 return firstNumber % secondNumber;
         }
-        return calculate;
+        return result;
     }
 
     public void setFirstNumber(int firstNumber) {

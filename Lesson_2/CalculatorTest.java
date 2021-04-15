@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class CalculatorTest {
 
     public static void main(String[] args) {
-        Scanner scanner = null;
         String reply = "yes";
 
         while (reply.equals("yes")) {
@@ -21,13 +20,11 @@ public class CalculatorTest {
 
             System.out.println("Result: " + calculator.calculate());
 
-            boolean isAnswerCorrect = false;
-            while (!isAnswerCorrect) {
-               System.out.print("Do you want to continue computing? [yes/no]: ");
-               reply = scan.nextLine();
-               isAnswerCorrect = (reply.equals("yes")||reply.equals("no"));
+            reply = "";
+            while (!reply.equals("yes") && !reply.equals("no")) {
+                System.out.print("Do you want to continue computing? [yes/no]: ");
+                reply = scan.next();
             }
         }
-        scanner.close();
     }
 }
