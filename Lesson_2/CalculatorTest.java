@@ -20,11 +20,10 @@ public class CalculatorTest {
 
             System.out.println("Result: " + calculator.calculate());
 
-            reply = "";
-            while (!reply.equals("yes") && !reply.equals("no")) {
+            do {
                 System.out.print("Do you want to continue computing? [yes/no]: ");
                 reply = scan.next();
-            }
+            } while (!reply.equals("yes") && !reply.equals("no"));
         }
     }
 }
