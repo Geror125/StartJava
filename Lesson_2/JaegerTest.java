@@ -1,70 +1,26 @@
-import java.util.Scanner;
-
 public class JaegerTest {
 
     public static void main(String[] args) {
         Jaeger jaegerOne = new Jaeger();
+        jaegerOne.setName("Cherno Alpha");
+        jaegerOne.setMark("Mark-1");
+        jaegerOne.setOrigin("Russia");
+        jaegerOne.setHeight(280);
+        jaegerOne.setWeight(2412);
+
         Jaeger jaegerTwo = new Jaeger();
-        Scanner scan = new Scanner(System.in);
+        jaegerTwo.setName("Gipsy Danger");
+        jaegerTwo.setMark("Mark-3");
+        jaegerTwo.setOrigin("United States of America");
+        jaegerTwo.setHeight(260);
+        jaegerTwo.setWeight(1980);
 
-        System.out.print("The First Jaeger.\nName: ");
-        jaegerOne.setName(scan.next());
-
-        System.out.print("Mark:");
-        jaegerOne.setMark(scan.next());
-
-        System.out.print("Origin:");
-        jaegerOne.setOrigin(scan.next());
-
-        System.out.print("Height:");
-        jaegerOne.setHeight(scan.nextShort());
-
-        System.out.print("Weight:");
-        jaegerOne.setWeight(scan.nextShort());
-
-        System.out.print("Speed:");
-        jaegerOne.setSpeed(scan.nextByte());
-
-        System.out.print("Stregth:");
-        jaegerOne.setStregth(scan.nextByte());
-
-        System.out.print("Armor:");
-        jaegerOne.setArmor(scan.nextByte());
+        System.out.println(jaegerOne.getName() + "\n" + jaegerOne.getMark() + "\n" + jaegerOne.getOrigin() + "\n" + jaegerOne.getHeight() + "\n" + jaegerOne.getWeight() + "\n");
+        System.out.println(jaegerTwo.getName() + "\n" + jaegerTwo.getMark() + "\n" + jaegerTwo.getOrigin() + "\n" + jaegerTwo.getHeight() + "\n" + jaegerTwo.getWeight() + "\n");
 
         jaegerOne.drift();
-        jaegerOne.move();
-        jaegerOne.scanKaiju();
-        jaegerOne.useVortexCannon();
-
-        System.out.print("\n");
-
-        System.out.print("The Second Jaeger.\nName: ");
-        jaegerTwo.setName(scan.next());
-
-        System.out.print("Mark:");
-        jaegerTwo.setMark(scan.next());
-
-        System.out.print("Origin:");
-        jaegerTwo.setOrigin(scan.next());
-
-        System.out.print("Height:");
-        jaegerTwo.setHeight(scan.nextShort());
-
-        System.out.print("Weight:");
-        jaegerTwo.setWeight(scan.nextShort());
-
-        System.out.print("Speed:");
-        jaegerTwo.setSpeed(scan.nextByte());
-
-        System.out.print("Stregth:");
-        jaegerTwo.setStregth(scan.nextByte());
-
-        System.out.print("Armor:");
-        jaegerTwo.setArmor(scan.nextByte());
-
         jaegerTwo.drift();
+        jaegerOne.move();
         jaegerTwo.move();
-        jaegerTwo.scanKaiju();
-        jaegerTwo.useVortexCannon();
     }
 }
