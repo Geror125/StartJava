@@ -1,4 +1,12 @@
+import java.util.Random;
+import java.util.Scanner;
+
 public class GuessNumber {
+    Scanner scan = new Scanner(System.in);
+    Random number = new Random();
+    Player playerOne = new Player();
+    Player playerTwo = new Player();
+
     private int randomNumber;
     private int firstPlayerNumber;
     private int secondPlayerNumber;
@@ -42,5 +50,35 @@ public class GuessNumber {
         } else if (secondPlayerNumber < randomNumber) {
             System.out.println("This number is > than the number that the computer riddled");
         }
+    }
+
+    public void Game() {
+        do {
+            setRandomNumber(number.nextInt(100));
+        } while (randomNumber == 0);
+
+        System.out.print("Enter the name of the first player :  ");
+        playerOne.setName(scan.next());
+
+        System.out.print("Enter the name of the second player :  ");
+        playerTwo.setName(scan.next());
+
+        do {
+            System.out.print(playerOne.getName() + "\n  Enter your number:");
+            setFirstPlayerNumber(scan.nextInt());
+            hintForTheFirstPlayer();
+            if (getFirstPlayerNumber() == getRandomNumber()) {
+                System.out.println("Winning player : " + playerOne.getName());
+                break;
+            }
+
+            System.out.print(playerTwo.getName() + "\n  Enter your number:");
+            setSecondPlayerNumber(scan.nextInt());
+            hintForTheSecondPlayer();
+            if (getSecondPlayerNumber() == getRandomNumber()) {
+                System.out.println("Winning player : " + playerTwo.getName());
+                break;
+            }
+        } while (getSecondPlayerNumber() != getRandomNumber());
     }
 }
