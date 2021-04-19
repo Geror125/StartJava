@@ -1,17 +1,11 @@
 public class Player {
-    String nameOne;
-    String nameTwo;
+    private String name;
 
-    public String getNameOne() {
-        return nameOne;
+    public String getName() {
+        return name;
     }
 
-    public String getNameTwo() {
-        return nameTwo;
-    }
-
-    public Player(String nameOne, String nameTwo){
-        this.nameOne = nameOne;
-        this.nameTwo = nameTwo;
+    public Player(String name){
+        this.name = name;
     }
 }

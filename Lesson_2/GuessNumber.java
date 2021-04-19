@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class GuessNumber {
     Scanner scan = new Scanner(System.in);
     Random number = new Random();
-    Player player = new Player("Tony", "Danil");
+    GuessNumber game = new GuessNumber(player1, player2);
 
     private int randomNumber;
     private int playerNumber;
@@ -21,19 +21,19 @@ public class GuessNumber {
         randomNumber = number.nextInt(100) + 1;
 
         do {
-            System.out.print(player.nameOne + "\n  Enter your number:");
+            System.out.print(player1.name + "\n  Enter your number:");
             playerNumber = scan.nextInt();
             hint();
             if (playerNumber == randomNumber) {
-                System.out.println("Winning player : " + player.nameOne);
+                System.out.println("Winning player : " + player1.name);
                 break;
             }
 
-            System.out.print(player.nameTwo + "\n  Enter your number:");
+            System.out.print(player2.name + "\n  Enter your number:");
             playerNumber = scan.nextInt();
             hint();
             if (playerNumber == randomNumber) {
-                System.out.println("Winning player : " + player.nameTwo);
+                System.out.println("Winning player : " + player2.name);
                 break;
             }
         } while (playerNumber != randomNumber);

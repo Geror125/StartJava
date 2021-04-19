@@ -7,14 +7,15 @@ public class GuessNumberTest {
 
         while (reply.equals("yes")) {
             Scanner scan = new Scanner(System.in);
-            GuessNumber game = new GuessNumber();
-            Player player = new Player("nameOne", "nameTwo");
-
+            Player player1 = new Player(name1);
+            Player player2 = new Player(name2);
+            
             System.out.print("Enter the name of the first player :  ");
-            player.nameOne = scan.next();
+            String name1 = scan.nextLine();
 
             System.out.print("Enter the name of the second player :  ");
-            player.nameTwo = scan.next();
+            String name2 = scan.nextLine();
+
 
             game.start();
 
