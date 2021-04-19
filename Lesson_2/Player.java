@@ -1,17 +1,11 @@
 public class Player {
-    String name;
-    int number;
-
-    public int getNumber() {
-        return number;
-    }
+    private String name;
 
     public Player(String name) {
         this.name = name;
     }
 
-    public Player(int number) {
-        this.number = number;
+    public String getName() {
+        return name;
     }
-
 }

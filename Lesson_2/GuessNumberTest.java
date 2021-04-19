@@ -17,25 +17,17 @@ public class GuessNumberTest {
             } while (guessNumber.getRandomNumber() == 0);
 
             do {
-                System.out.print(playerOne.name + "  Enter your number:");
-                playerOne.number = scan.nextInt();
-                if (playerOne.number > guessNumber.getRandomNumber()) {
-                    System.out.println("This number is < than the one the computer riddled");
-                } else if (playerOne.number < guessNumber.getRandomNumber()) {
-                    System.out.println("This number is > than the number that the computer riddled");
-                }
-                if (playerOne.number == guessNumber.getRandomNumber()) {
+                System.out.print(playerOne.getName() + "  Enter your number:");
+                guessNumber.setFirstPlayerNumber(scan.nextInt());
+                guessNumber.hintForTheFirstPlayer();
+                if (guessNumber.getFirstPlayerNumber() == guessNumber.getRandomNumber()) {
                     break;
                 }
 
-                System.out.print(playerTwo.name + "  Enter your number:");
-                playerTwo.number = scan.nextInt();
-                if (playerTwo.number > guessNumber.getRandomNumber()) {
-                    System.out.println("This number is < than the one the computer riddled");
-                } else if (playerTwo.number < guessNumber.getRandomNumber()) {
-                    System.out.println("This number is > than the number that the computer riddled");
-                }
-            } while (playerTwo.number != guessNumber.getRandomNumber());
+                System.out.print(playerTwo.getName() + "  Enter your number:");
+                guessNumber.setSecondPlayerNumber(scan.nextInt());
+                guessNumber.hintForTheSecondPlayer();
+            } while (guessNumber.getSecondPlayerNumber() != guessNumber.getRandomNumber());
 
             System.out.println("You guessed the number!!!" + guessNumber.getRandomNumber());
 
