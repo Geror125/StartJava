@@ -31,7 +31,7 @@ public class Calculator {
                 for (int i = 1; i <= secondNumber; i++) {
                     calculate *= firstNumber;
                 }
-                return calculate;
+                return calculate
             case '%' :
                 return firstNumber % secondNumber;
         }
