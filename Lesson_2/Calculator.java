@@ -1,5 +1,5 @@
 public class Calculator {
-    int result;
+    private int calculate;
     private int firstNumber;
     private int secondNumber;
     private char sign;
@@ -16,7 +16,7 @@ public class Calculator {
         this.sign = sign;
     }
 
-    public int calculate() {
+    public int getCalculate() {
         switch (sign) {
             case '+' :
                 return firstNumber + secondNumber;
@@ -27,16 +27,14 @@ public class Calculator {
             case '/' :
                 return firstNumber / secondNumber;
             case '^' :
-                result = 1;
+                int calculate = 1;
                 for (int i = 1; i <= secondNumber; i++) {
-                    result *= firstNumber;
+                    calculate *= firstNumber;
                 }
-                break;
+                return calculate;
             case '%' :
                 return firstNumber % secondNumber;
         }
-        return result;
+        return calculate;
     }
-
-
 }

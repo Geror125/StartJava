@@ -18,7 +18,7 @@ public class CalculatorTest {
             System.out.print("Enter the second number: ");
             calculator.setSecondNumber(scan.nextInt());
 
-            System.out.println("Result: " + calculator.calculate());
+            System.out.println("Result: " + calculator.getCalculate());
 
             do {
                 System.out.print("Do you want to continue computing? [yes/no]: ");
