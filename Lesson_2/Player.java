@@ -5,10 +5,6 @@ public class Player {
         this.name = name;
     }
 
-    public Player() {
-        name = name;
-    }
-
     public String getName() {
         return name;
     }
