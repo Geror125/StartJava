@@ -6,15 +6,16 @@ public class GuessNumberTest {
         String reply = "yes";
 
         while (reply.equals("yes")) {
-            GuessNumber game = new GuessNumber(player1, player2);
 
             System.out.print("Enter the name of the first player :  ");
             String name1 = scan.nextLine();
-            Player player1 = new Player(name1);
+            Player playerOne = new Player(name1);
 
             System.out.print("Enter the name of the second player :  ");
             String name2 = scan.nextLine();
-            Player player2 = new Player(name2);
+            Player playerTwo = new Player(name2);
+
+            GuessNumber game = new GuessNumber(playerOne.getName(), playerTwo.getName());
 
             game.start();
 
