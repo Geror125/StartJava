@@ -12,9 +12,9 @@ public class GuessNumber {
 
     public GuessNumber(Player player1, Player player2) {
         Random number = new Random();
+        rnd = number.nextInt(100) + 1;
         this.player1 = player1;
         this.player2 = player2;
-        rnd = number.nextInt(100) + 1;
     }
 
     public void start() {
