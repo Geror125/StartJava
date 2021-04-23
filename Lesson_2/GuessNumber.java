@@ -6,13 +6,13 @@ public class GuessNumber {
 
     private Player player1;
     private Player player2;
-    private int rnd;
+    private int targetNumber;
     private int playerNumber;
     private boolean reply = true;
 
     public GuessNumber(Player player1, Player player2) {
         Random number = new Random();
-        rnd = number.nextInt(100) + 1;
+        targetNumber = number.nextInt(100) + 1;
         this.player1 = player1;
         this.player2 = player2;
     }
@@ -22,25 +22,23 @@ public class GuessNumber {
             System.out.print(player1.getName() + "\n  Enter your number:");
             playerNumber = scan.nextInt();
             compareNumbers();
-            if (!reply) {
-                break;
-            }
 
             System.out.print(player2.getName() + "\n  Enter your number:");
             playerNumber = scan.nextInt();
             compareNumbers();
-        } while (reply);
+        } while (true);
     }
 
     private void compareNumbers() {
-        if (playerNumber > rnd) {
+        if (playerNumber > targetNumber) {
             System.out.println("This number is < than the one the computer riddled");
-        } else if (playerNumber < rnd) {
+            return false;
+        } else if (playerNumber < targetNumber) {
             System.out.println("This number is > than the number that the computer riddled");
-        }if (playerNumber == rnd) {
+            return false;
+        } else if (playerNumber == targetNumber) {
             System.out.println("Winning!!!");
-            reply = false;
-            return;
+            return true;
         }
     }
 }
