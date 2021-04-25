@@ -8,7 +8,6 @@ public class GuessNumber {
     private Player player2;
     private int targetNumber;
     private int playerNumber;
-    private boolean reply = true;
 
     public GuessNumber(Player player1, Player player2) {
         Random number = new Random();
@@ -21,15 +20,19 @@ public class GuessNumber {
         do {
             System.out.print(player1.getName() + "\n  Enter your number:");
             playerNumber = scan.nextInt();
-            compareNumbers();
+            if (compareNumbers()) {
+                break;
+            }
 
             System.out.print(player2.getName() + "\n  Enter your number:");
             playerNumber = scan.nextInt();
-            compareNumbers();
+            if (compareNumbers()) {
+                break;
+            }
         } while (true);
     }
 
-    private void compareNumbers() {
+    private boolean compareNumbers() {
         if (playerNumber > targetNumber) {
             System.out.println("This number is < than the one the computer riddled");
             return false;
@@ -39,6 +42,8 @@ public class GuessNumber {
         } else if (playerNumber == targetNumber) {
             System.out.println("Winning!!!");
             return true;
+        } else {
+            return false;
         }
     }
 }
