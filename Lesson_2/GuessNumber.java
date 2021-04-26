@@ -29,21 +29,20 @@ public class GuessNumber {
             if (compareNumbers()) {
                 break;
             }
-        } while (true);
+        } while(true);
     }
 
     private boolean compareNumbers() {
-        if (playerNumber > targetNumber) {
-            System.out.println("This number is < than the one the computer riddled");
+        if (playerNumber > targetNumber || playerNumber < targetNumber) {
+            if (playerNumber > targetNumber) {
+                System.out.println("This number is < than the one the computer riddled");
+            } else if (playerNumber < targetNumber) {
+                System.out.println("This number is > than the number that the computer riddled");
+            }
             return false;
-        } else if (playerNumber < targetNumber) {
-            System.out.println("This number is > than the number that the computer riddled");
-            return false;
-        } else if (playerNumber == targetNumber) {
+        } else {
             System.out.println("Winning!!!");
             return true;
-        } else {
-            return false;
         }
     }
 }
