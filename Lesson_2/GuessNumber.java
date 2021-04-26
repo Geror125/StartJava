@@ -30,19 +30,18 @@ public class GuessNumber {
                 break;
             }
         } while(true);
+        System.out.println("Winning!!!");
     }
 
     private boolean compareNumbers() {
-        if (playerNumber > targetNumber || playerNumber < targetNumber) {
-            if (playerNumber > targetNumber) {
-                System.out.println("This number is < than the one the computer riddled");
-            } else if (playerNumber < targetNumber) {
-                System.out.println("This number is > than the number that the computer riddled");
-            }
-            return false;
-        } else {
-            System.out.println("Winning!!!");
+        if(playerNumber == targetNumber) {
             return true;
         }
+        if (playerNumber > targetNumber) {
+            System.out.println("This number is < than the one the computer riddled");
+        } else {
+            System.out.println("This number is > than the number that the computer riddled");
+        }
+        return false;
     }
 }
