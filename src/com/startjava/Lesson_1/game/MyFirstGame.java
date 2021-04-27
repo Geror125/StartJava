@@ -1,3 +1,5 @@
+package com.startjava.Lesson_1.game;
+
 public class MyFirstGame {
     public static void main(String[] args) {
         System.out.println("TASK: Guess a number (from 0 to 100).");

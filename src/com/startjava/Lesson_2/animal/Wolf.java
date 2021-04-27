@@ -1,3 +1,5 @@
+package com.startjava.Lesson_2.animal;
+
 public class Wolf {
     private String gender = "male";
     private String petName = "foam";

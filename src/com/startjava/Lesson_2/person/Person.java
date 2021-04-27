@@ -1,3 +1,5 @@
+package com.startjava.Lesson_2.person;
+
 public class Person {
     String gender = "male";
     String name = "Denis";
