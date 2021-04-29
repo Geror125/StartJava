@@ -1,4 +1,4 @@
-package com.startjava.Lesson_2_3.calculator;
+package com.startjava.Lesson_2_3_4.calculator;
 
 import java.util.Scanner;
 
@@ -6,7 +6,6 @@ public class CalculatorTest {
 
     public static void main(String[] args) {
         String reply = "yes";
-
         while (reply.equals("yes")) {
             Calculator calculator = new Calculator();
             Scanner scan = new Scanner(System.in);

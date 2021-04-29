@@ -1,8 +1,9 @@
-package com.startjava.Lesson_2_3.animal;
+package com.startjava.Lesson_2_3_4.animal;
 
 public class WolfTest {
     public static void main(String[] args) {
         Wolf wolfOne = new Wolf();
+
         wolfOne.setGender("girl");
         wolfOne.setPetName("Girl");
         wolfOne.setWeight(27);
