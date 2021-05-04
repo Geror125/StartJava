@@ -10,14 +10,9 @@ public class CalculatorTest {
             Calculator calculator = new Calculator();
             Scanner scan = new Scanner(System.in);
 
-            System.out.print("Enter the first number: ");
-            calculator.setFirstNumber(scan.nextInt());
-
-            System.out.print("Enter the sign of the mathematical operation: ");
-            calculator.setSign(scan.next().charAt(0));
-
-            System.out.print("Enter the second number: ");
-            calculator.setSecondNumber(scan.nextInt());
+            System.out.print("Enter the expression: ");
+            calculator.setExpression(scan.next());
+            calculator.assignment();
 
             System.out.println("Result: " + calculator.calculate());
 

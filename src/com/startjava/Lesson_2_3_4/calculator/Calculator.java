@@ -1,40 +1,37 @@
 package com.startjava.Lesson_2_3_4.calculator;
 
+import java.lang.Math;
+
 public class Calculator {
+
+    private String expression;
     private int firstNumber;
+    private String sign;
     private int secondNumber;
-    private char sign;
 
-    public void setFirstNumber(int firstNumber) {
-        this.firstNumber = firstNumber;
+    public void setExpression(String expression) {
+        this.expression = expression;
     }
 
-    public void setSecondNumber(int secondNumber) {
-        this.secondNumber = secondNumber;
+    public void assignment() {
+        String[] words = expression.split("/");
+        firstNumber = Integer.parseInt(words[0]);
+        sign = words[1];
+        secondNumber = Integer.parseInt(words[2]);
     }
 
-    public void setSign(char sign) {
-        this.sign = sign;
-    }
-
-    public int calculate() {
+    public double calculate() {
         switch (sign) {
-            case '+' :
-                return firstNumber + secondNumber;
-            case '-' :
-                return firstNumber - secondNumber;
-            case '*' :
-                return firstNumber * secondNumber;
-            case '/' :
-                return firstNumber / secondNumber;
-            case '^' :
-                int result = 1;
-                for (int i = 1; i <= secondNumber; i++) {
-                    result *= firstNumber;
-                }
-                return result;
-            case '%' :
-                return firstNumber % secondNumber;
+            case "+":
+                return Math.addExact(firstNumber, secondNumber);
+            case "-":
+                return Math.subtractExact(firstNumber, secondNumber);
+            case "*":
+                return Math.multiplyExact(firstNumber, secondNumber);
+            case "/":
+                return Math.floorDiv(firstNumber, secondNumber);
+            case "^":
+                return Math.pow(firstNumber, secondNumber);
         }
         return 0;
     }
