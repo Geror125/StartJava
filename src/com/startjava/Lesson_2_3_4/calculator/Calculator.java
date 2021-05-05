@@ -13,14 +13,15 @@ public class Calculator {
         this.expression = expression;
     }
 
-    public void assignment() {
-        String[] words = expression.split("/");
+    public void splitExpression() {
+        String[] words = expression.split(" ");
         firstNumber = Integer.parseInt(words[0]);
         sign = words[1];
         secondNumber = Integer.parseInt(words[2]);
     }
 
     public double calculate() {
+        splitExpression();
         switch (sign) {
             case "+":
                 return Math.addExact(firstNumber, secondNumber);

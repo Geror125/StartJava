@@ -11,8 +11,7 @@ public class CalculatorTest {
             Scanner scan = new Scanner(System.in);
 
             System.out.print("Enter the expression: ");
-            calculator.setExpression(scan.next());
-            calculator.assignment();
+            calculator.setExpression(scan.nextLine());
 
             System.out.println("Result: " + calculator.calculate());
 
