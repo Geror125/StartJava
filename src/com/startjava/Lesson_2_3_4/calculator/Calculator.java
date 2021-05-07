@@ -13,7 +13,7 @@ public class Calculator {
         this.expression = expression;
     }
 
-    public void splitExpression() {
+    private void splitExpression() {
         String[] words = expression.split(" ");
         firstNumber = Integer.parseInt(words[0]);
         sign = words[1];
