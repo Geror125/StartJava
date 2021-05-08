@@ -13,13 +13,6 @@ public class Calculator {
         this.expression = expression;
     }
 
-    private void splitExpression() {
-        String[] words = expression.split(" ");
-        firstNumber = Integer.parseInt(words[0]);
-        sign = words[1];
-        secondNumber = Integer.parseInt(words[2]);
-    }
-
     public double calculate() {
         splitExpression();
         switch (sign) {
@@ -35,5 +28,12 @@ public class Calculator {
                 return Math.pow(firstNumber, secondNumber);
         }
         return 0;
+    }
+
+    private void splitExpression() {
+        String[] words = expression.split(" ");
+        firstNumber = Integer.parseInt(words[0]);
+        sign = words[1];
+        secondNumber = Integer.parseInt(words[2]);
     }
 }

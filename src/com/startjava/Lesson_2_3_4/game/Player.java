@@ -14,11 +14,11 @@ public class Player {
         return name;
     }
 
-    public int[] getPlayerNumbers() {
-        return Arrays.copyOf(numbers, numbers.length);
+    public int[] getNumbers(int index) {
+        return Arrays.copyOf(numbers, index);
     }
 
-    public void setPlayerNumbers(int index, int number) {
+    public void setNumber(int index, int number) {
         numbers[index] = number;
     }
 }
