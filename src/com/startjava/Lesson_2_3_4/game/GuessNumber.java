@@ -1,80 +1,76 @@
 package com.startjava.Lesson_2_3_4.game;
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
+
 public class GuessNumber {
     Scanner scan = new Scanner(System.in);
+
     private final Player player1;
     private final Player player2;
     private final int targetNumber;
     private int number;
-    private int i;
+    private int section;
 
     public GuessNumber(Player player1, Player player2) {
         Random number = new Random();
         targetNumber = number.nextInt(100) + 1;
         this.player1 = player1;
         this.player2 = player2;
+
     }
 
     public void start() {
         do {
             if (makeMove(player1)) {
                 break;
-            }
-            if (makeMove(player2)) {
+            } else if (makeMove(player2)) {
                 break;
             }
-            i++;
+            section++;
         } while (true);
-        clearNums();
-        enteredNumbers();
     }
 
-    public boolean makeMove(Player name) {
-        inputNumber(name);
-        if (hint (name)) {
+    public boolean makeMove(Player player) {
+        inputNumber(player);
+        if (compareNums (player)) {
             return true;
         }
-        if (i == 9) {
-            if (name == player2) {
-                enteredNumbers();
+        if (section == 9) {
+            if (player == player2) {
+                enumeration(player1);
+                enumeration(player2);
                 return true;
             }
         }
         return false;
     }
 
-    public void inputNumber(Player name) {
-        System.out.println(" You have " + (10 - i) + " tries left");
-        System.out.print(name.getName() + "\n  Enter your number: ");
+    public void inputNumber(Player player) {
+        System.out.println(" You have " + (10 - section) + " tries left");
+        System.out.print(player.getName() + "\n  Enter your number: ");
         number = scan.nextInt();
-        name.setNumber(i, number);
+        player.setNumber(section, number);
     }
 
-    public boolean hint(Player name) {
+    public boolean compareNums(Player player) {
         if (number == targetNumber) {
-            System.out.println("Player " + name.getName() + " guessed number " + targetNumber + " from " + (i + 1) + " tries");
-            enteredNumbers();
+            System.out.println("Player " + player.getName() + " guessed number " + targetNumber + " from " + (section + 1) + " tries");
+            enumeration(player1);
+            enumeration(player2);
             return true;
         }
-        if (number < targetNumber) {
-            System.out.println("  This number is > than the number that the computer riddled");
-        } else if (i == 9) {
-            System.out.println("The " + name.getName() + " has run out of attempts.");
-        } else {
-            System.out.println("  This number is < than the one the computer riddled");
-        }
+        System.out.println(number < targetNumber ? "  This number is > than the number that the computer riddled"
+                : section == 9 ? "The " + player.getName() + " has run out of attempts."
+                : "  This number is < than the one the computer riddled");
         return false;
     }
 
-    public void enteredNumbers() {
-        System.out.println(Arrays.toString(player1.getNumbers(i + 1)));
-        System.out.println(Arrays.toString(player2.getNumbers(i + 1)));
-    }
-
-    public void clearNums() {
-        Arrays.fill(player1.getNumbers(i), 0);
-        Arrays.fill(player2.getNumbers(i), 0);
+    public void enumeration(Player player) {
+        for (int i = 0; i <= section; i++){
+            System.out.print(player.getNumber(i) + " ");
+        }
+        System.out.println(" ");
     }
 }
