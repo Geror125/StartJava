@@ -2,7 +2,7 @@ package com.startjava.Lesson_2_3_4.game;
 
 public class Player {
     private final String name;
-    private int[] numbers = new int[10];
+    private final int[] numbers = new int[10];
 
     public Player(String name) {
         this.name = name;
@@ -20,7 +20,7 @@ public class Player {
         numbers[index] = number;
     }
 
-    public void setNumbers(int index, int numbers) {
-        this.numbers[index] = numbers;
+    public int[] getNumbers() {
+        return numbers;
     }
 }
