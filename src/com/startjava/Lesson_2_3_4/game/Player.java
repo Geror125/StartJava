@@ -1,5 +1,7 @@
 package com.startjava.Lesson_2_3_4.game;
 
+import java.util.Arrays;
+
 public class Player {
     private final String name;
     private final int[] numbers = new int[10];
@@ -20,7 +22,7 @@ public class Player {
         numbers[index] = number;
     }
 
-    public int[] getNumbers() {
-        return numbers;
+    public int[] getNumbers(int index) {
+        return Arrays.copyOf(numbers, index);
     }
 }

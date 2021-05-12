@@ -20,7 +20,7 @@ public class GuessNumber {
 
     public void start() {
         do {
-            if (makeMove(player1) | makeMove(player2)) {
+            if (makeMove(player1) || makeMove(player2)) {
                 break;
             }
             attemptNumber++;
@@ -30,15 +30,14 @@ public class GuessNumber {
     public boolean makeMove(Player player) {
         inputNumber(player);
         if (compareNumber(player) || attemptNumber == 9) {
-            if (attemptNumber == 9) {
+            if (attemptNumber > 8) {
                 System.out.println("The " + player.getName() + " has run out of attempts.");
-                if (player == player2) {
-                    showEnteredNumber(player1);
-                    showEnteredNumber(player2);
-                }
             }
-
-            return true;
+            if (player == player2 || player.getNumber(attemptNumber) == targetNumber) {
+                showEnteredNumber(player1);
+                showEnteredNumber(player2);
+                return true;
+            }
         }
         return false;
     }
@@ -52,17 +51,19 @@ public class GuessNumber {
     public boolean compareNumber(Player player) {
         if (player.getNumber(attemptNumber) == targetNumber) {
             System.out.println("Player " + player.getName() + " guessed number " + targetNumber + " from " + (attemptNumber + 1) + " tries");
-            showEnteredNumber(player1);
-            showEnteredNumber(player2);
             return true;
         }
-        System.out.println(player.getNumber(attemptNumber) < targetNumber ? "  This number is > than the number that the computer riddled"
-                : "  This number is < than the one the computer riddled");
+        String lessOrMore = player.getNumber(attemptNumber) < targetNumber ? ">" : "<";
+        System.out.println("This number is " + lessOrMore + " than the number that the computer riddled");
         return false;
     }
 
     public void showEnteredNumber(Player player) {
-        for (int number: player.getNumbers()){
+        int i = attemptNumber + 1;
+        if (player1.getNumber(attemptNumber) == targetNumber && player == player2) {
+            i = attemptNumber;
+        }
+        for (int number: player.getNumbers(i)){
             System.out.print(number + " ");
         }
         System.out.println(" ");
